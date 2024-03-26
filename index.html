@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepe Pizza</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Link to your JavaScript file with defer attribute -->
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Container for the form -->
+    <div class="container">
+        <h1>Create your Pizza</h1>
+        <!-- Pizza order form -->
+        <form id="pizzaForm">
+            <!-- Select pizza size -->
+            <div class="form-group">
+                <label for="pizzaSize">Pizza Size:</label>
+                <select id="pizzaSize" name="pizzaSize">
+                    <option value="">-- Select Size --</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+
+            <!-- Select crust type -->
+            <div class="form-group">
+                <label for="crustType">Crust Type:</label>
+                <select id="crustType" name="crustType">
+                    <option value="">-- Select Crust Type --</option>
+                    <option value="regular">Regular</option>
+                    <option value="thin">Thin Crust</option>
+                    <option value="thick">Thick Crust</option>
+                </select>
+            </div>
+
+            <!-- Select sauce -->
+            <div class="form-group">
+                <label for="sauce">Sauce:</label>
+                <select id="sauce" name="sauce">
+                    <option value="">-- Select Sauce --</option>
+                    <option value="tomato">Tomato</option>
+                    <option value="pesto">Pesto</option>
+                    <option value="white">White Sauce</option>
+                    <option value="No sauce">No Sauce</option>
+                    <option value="Butter Chicken">Butter Chicken Sauce</option>
+                </select>
+            </div>
+
+            <!-- Toppings selection -->
+            <div class="form-group">
+                <label>Toppings:</label>
+                <div class="toppings-categories">
+                    <!-- Vegetarian toppings -->
+                    <div class="toppings-category">
+                        <label>Vegetarian:</label>
+                        <input type="checkbox" name="vegetarianToppings" value="mushrooms"> Mushrooms<br>
+                        <input type="checkbox" name="vegetarianToppings" value="onions"> Onions<br>
+                        <input type="checkbox" name="vegetarianToppings" value="peppers"> Peppers<br>
+                        <input type="checkbox" name="vegetarianToppings" value="tomatoes"> Tomatoes<br>
+                    </div>
+                    <!-- Non-Vegetarian toppings -->
+                    <div class="toppings-category">
+                        <label>Non-Vegetarian:</label>
+                        <input type="checkbox" name="nonVegetarianToppings" value="pepperoni"> Pepperoni<br>
+                        <input type="checkbox" name="nonVegetarianToppings" value="sausage"> Sausage<br>
+                        <input type="checkbox" name="nonVegetarianToppings" value="ham"> Ham<br>
+                        <input type="checkbox" name="nonVegetarianToppings" value="bacon"> Bacon<br>
+                        <input type="checkbox" name="nonVegetarianToppings" value="bacon"> Chicken<br>
+                    </div>
+                    <!-- Special toppings -->
+                    <div class="toppings-category">
+                        <label>Special:</label>
+                        <input type="checkbox" name="specialToppings" value="pineapple"> Pineapple<br>
+                        <input type="checkbox" name="specialToppings" value="olives"> Olives<br>
+                        <input type="checkbox" name="specialToppings" value="artichokes"> Artichokes<br>
+                        <input type="checkbox" name="specialToppings" value="spinach"> Spinach<br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number of slices -->
+            <div class="form-group">
+                <label for="slices">Slices:</label>
+                <input type="number" id="slices" name="slices" min="1" max="12" value="8">
+            </div>
+
+            <!-- Select cheese -->
+            <div class="form-group">
+                <label for="cheese">Cheese:</label>
+                <select id="cheese" name="cheese">
+                    <option value="">-- Select Cheese --</option>
+                    <option value="regular">Regular</option>
+                    <option value="extra">Extra</option>
+                    <option value="Feta">Feta</option>
+                    <option value="Parmesan">Parmesan</option>
+                </select>
+            </div>
+
+            <!-- Order type -->
+            <div class="form-group">
+                <label for="orderType">Order Type:</label>
+                <select id="orderType" name="orderType">
+                    <option value="">-- Select Order Type --</option>
+                    <option value="pickup">Pickup</option>
+                    <option value="delivery">Delivery</option>
+                    <option value="eatIn">Eat-In</option>
+                </select>
+            </div>
+
+            <!-- Delivery time -->
+            <div class="form-group">
+                <label for="deliveryTime">Delivery Time:</label>
+                <input type="datetime-local" id="deliveryTime" name="deliveryTime">
+            </div>
+
+            <!-- Delivery location -->
+            <div class="form-group">
+                <label for="deliveryLocation">Delivery Location:</label>
+                <input type="text" id="deliveryLocation" name="deliveryLocation">
+            </div>
+
+            <!-- Customer name -->
+            <div class="form-group">
+                <label for="customerName">Name:</label>
+                <input type="text" id="customerName" name="customerName">
+            </div>
+
+            <!-- Customer email -->
+            <div class="form-group">
+                <label for="customerEmail">Email:</label>
+                <input type="email" id="customerEmail" name="customerEmail">
+            </div>
+
+            <!-- Customer phone -->
+            <div class="form-group">
+                <label for="customerPhone">Phone:</label>
+                <input type="tel" id="customerPhone" name="customerPhone" pattern="[0-9]{10}">
+            </div>
+
+            <!-- Special instructions -->
+            <div class="form-group">
+                <label for="specialInstructions">Special Instructions:</label>
+                <textarea id="specialInstructions" name="specialInstructions" rows="4" placeholder="Any special instructions..."></textarea>
+            </div>
+
+            <!-- Place order button -->
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+    <Order Confirmation> 
+    <div id="orderConfirmation" style="display: none;">
+        
+        <h2>Order Confirmation</h2>
+        <p>Your order has been placed. Thank you!</p>
+        <p>This is your order</p>
+        <p> student id : 1235300 [Pralav Adhikari]</p>
+        <img src="/images/pizza_PNG43985.png" width="50" height="400">
+    </div>
+    
+</body>
+</html>
